@@ -1,0 +1,7 @@
+# Environment variables
+.env
+
+# Other things to ignore...
+db.sqlite3
+__pycache__/
+
