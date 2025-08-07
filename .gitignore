@@ -1,5 +1,8 @@
 # Environment variables
 .env
+.venv
+.venv/
+venv/
 
 # Other things to ignore...
 db.sqlite3
