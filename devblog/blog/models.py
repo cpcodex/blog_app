@@ -4,10 +4,12 @@ from django.utils import timezone
 
 
 class Post(models.Model):
+    # set status
     class Status(models.TextChoices):
         DRAFT = 'DF', 'Draft'
         PUBLISHED = 'PB', 'Published'
 
+    # post format schema
     title = models.CharField(max_length=140)
     slug = models.SlugField(max_length=140)
     author = models.ForeignKey(
