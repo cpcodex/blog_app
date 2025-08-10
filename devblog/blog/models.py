@@ -20,8 +20,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='blog_posts'
-    )
+        related_name='blog_posts')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
@@ -29,8 +28,7 @@ class Post(models.Model):
     status = models.CharField(
         max_length=2,
         choices=Status,
-        default=Status.DRAFT
-    )
+        default=Status.DRAFT)
     objects = models.Manager()  # default manager
     published = PublishedManager()  # custom manager
 
