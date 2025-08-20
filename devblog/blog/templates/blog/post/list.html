@@ -4,6 +4,8 @@
 
 {% block content %}
   <h1>My Blog</h1>
+  
+  <!-- loop through and display posts -->
   {% for post in posts %}
     <h2>
       <a href="{{ post.get_absolute_url }}">
@@ -15,5 +17,7 @@
     </p>
     {{ post.body|truncatewords:30|linebreaks }}
   {% endfor %}
+
+  <!-- include pagination for navigation -->
   {% include "pagination.html" with page=posts %}
 {% endblock %}
