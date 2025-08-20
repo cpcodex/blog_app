@@ -5,9 +5,10 @@ from .models import Post
 
 def post_list(request):
     post_list = Post.published.all()
-    # paginator init
+    # Paginator init
     paginator = Paginator(post_list, 8)  # pagination with posts per page
     page_number = request.GET.get('page', 1)
+    # catch error
     try:
         posts = paginator.page(page_number)
     # error handling for page_number not an int
